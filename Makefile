@@ -12,8 +12,11 @@ RPATH := -Wl,-rpath=$(CWD)/lib
 
 
 
-all: bin/readDataBlocks bin/commTest
+all: bin/readDataBlocks bin/commTest bin/TriggerExample
 
+
+bin/TriggerExample: src/TriggerExample.cxx lib/libcaen.so
+	g++ $(CXXFLAGS) $(CPPFLAGS) -o bin/TriggerExample src/TriggerExample.cxx $(LIBS) $(CAENLIBS) $(LDFLAGS) $(RPATH)
 
 bin/readDataBlocks: src/readDataBlocks.cxx lib/libcaen.so
 	g++ $(CXXFLAGS) $(CPPFLAGS) -o bin/readDataBlocks src/readDataBlocks.cxx $(LIBS) $(CAENLIBS) $(LDFLAGS) $(RPATH)
