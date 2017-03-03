@@ -1,0 +1,21 @@
+#include <CAENComm.h>
+
+//Pulled from Caen's Digitizer Library
+#define MAX_UINT16_CHANNEL_SIZE     (8)
+
+typedef struct 
+{
+    uint32_t             EventSize;
+    uint32_t             BoardId;
+    uint32_t             Pattern;
+    uint32_t             ChannelMask;
+    uint32_t             EventCounter;
+    uint32_t             TriggerTimeTag;
+} CAEN_DGTZ_EventInfo_t;
+
+typedef struct 
+{
+    uint32_t            ChSize[MAX_UINT16_CHANNEL_SIZE]; // the number of samples stored in DataChannel array  
+    uint16_t            *DataChannel[MAX_UINT16_CHANNEL_SIZE]; // the array of ChSize samples
+} CAEN_DGTZ_UINT16_EVENT_t;
+

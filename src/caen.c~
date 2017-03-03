@@ -1,0 +1,10 @@
+#include <caen.h>
+
+typedef struct Register {
+  std::string name;
+  uint32_t sAddress; // start address
+  uint32_t eAddress; // end address
+  uint32_t bAddress; // broadcast
+
+
+} Register; 
